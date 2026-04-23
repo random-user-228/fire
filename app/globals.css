@@ -1,26 +1,52 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.calendar-wrap {
+  max-width: 420px;
+  margin: auto;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* загальний календар */
+.react-calendar {
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+  font-family: sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* кнопки місяця */
+.react-calendar__navigation button {
+  background: none;
+  font-size: 18px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* дні */
+.react-calendar__tile {
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+/* hover */
+.react-calendar__tile:enabled:hover {
+  transform: scale(1.05);
+}
+
+/* ЗМІНИ */
+.shift-A {
+  background: #ff4d4d !important;
+  color: white;
+}
+
+.shift-B {
+  background: #4da6ff !important;
+  color: white;
+}
+
+.shift-C {
+  background: #4dff88 !important;
+  color: black;
+}
+
+.shift-D {
+  background: #ffd24d !important;
+  color: black;
 }
