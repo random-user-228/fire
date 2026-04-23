@@ -32,17 +32,17 @@
 
 /* ЗМІНИ */
 .shift-A {
-  background: #ff4d4d !important;
-  color: white;
-}
-
-.shift-B {
   background: #4da6ff !important;
   color: white;
 }
 
-.shift-C {
+.shift-B {
   background: #4dff88 !important;
+  color: white;
+}
+
+.shift-C {
+  background: #ff4d4d !important;
   color: black;
 }
 
