@@ -19,7 +19,7 @@ function getShift(date: Date) {
   return shifts[((diffDays % 4) + 4) % 4]
 }
 
-export default function ShiftCalendar() {
+export default function FireCalendar() {
   const [value, setValue] = useState(new Date())
 
   return (

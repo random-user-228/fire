@@ -1,54 +1,127 @@
 @import "tailwindcss";
-.calendar-wrap {
-  max-width: 420px;
-  margin: auto;
-}
+.calendar-wrap { max-width: 720px; margin: 0 auto; }
 
-/* загальний календар */
 .react-calendar {
-  border: none;
-  border-radius: 16px;
+  --card-bg: #0B0F14;
+  --card-2: #121521;
+  --muted: #94a3b8;
+  --accent: #2563eb;
+  background: linear-gradient(180deg, var(--card-2), rgba(10,14,18,0.9));
+  color: #E6EDF3;
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 12px;
   padding: 10px;
-  font-family: sans-serif;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-family: inherit;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  position: relative;
+  z-index: 10;
 }
 
-/* кнопки місяця */
+/* навігація календаря */
+.react-calendar__navigation {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
 .react-calendar__navigation button {
-  background: none;
-  font-size: 18px;
+  background: rgba(255,255,255,0.03);
+  color: #E6EDF3;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+  cursor: pointer;
+  transition: background .12s, transform .08s, box-shadow .12s;
+  pointer-events: auto;
+  z-index: 30;
+}
+.react-calendar__navigation button:hover {
+  background: rgba(37,99,235,0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+}
+.react-calendar__navigation button:focus {
+  outline: 2px solid rgba(37,99,235,0.18);
+  outline-offset: 2px;
+}
+
+/* заголовок місяця */
+.react-calendar__month-view__weekdays {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: .875rem;
 }
 
 /* дні */
 .react-calendar__tile {
   border-radius: 10px;
-  transition: 0.2s;
+  transition: transform .12s, box-shadow .12s, background .12s;
+  background: transparent;
+  color: #E6EDF3;
+  border: 1px solid transparent;
 }
-
-/* hover */
 .react-calendar__tile:enabled:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.5);
 }
 
-/* ЗМІНИ */
-.shift-A {
-  background: #4da6ff !important;
-  color: white;
+/* сьогодні */
+.react-calendar__tile--now {
+  box-shadow: inset 0 0 0 1px rgba(37,99,235,0.18);
+  border-radius: 10px;
 }
 
-.shift-B {
-  background: #4dff88 !important;
-  color: white;
+/* активна дата */
+.react-calendar__tile--active, .react-calendar__tile--range {
+  background: linear-gradient(180deg, rgba(37,99,235,0.18), rgba(37,99,235,0.12));
+  color: #FFFFFF;
+  border: 1px solid rgba(37,99,235,0.28);
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
 }
 
-.shift-C {
-  background: #ff4d4d !important;
-  color: black;
+/* weekend */
+.react-calendar__month-view__days__day--weekend { color: #f87171; }
+
+/* ensure calendar tools are on top if something overlays */
+.react-calendar, .react-calendar * { box-sizing: border-box; }
+
+/* ЗМІНИ — темні версії */
+.shift-A { background: linear-gradient(180deg,#1e3a8a,#2563eb) !important; color: #fff !important; }
+.shift-B { background: linear-gradient(180deg,#065f46,#10b981) !important; color: #fff !important; }
+.shift-C { background: linear-gradient(180deg,#991b1b,#ef4444) !important; color: #fff !important; }
+.shift-D { background: linear-gradient(180deg,#92400e,#f59e0b) !important; color: #0b0f14 !important; }
+
+/* Легенда */
+.legend {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.legend > div {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #0b0f14;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.legend .shift-A, .legend .shift-B, .legend .shift-C, .legend .shift-D {
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.6);
 }
 
-.shift-D {
-  background: #ffd24d !important;
-  color: black;
+/* responsive */
+@media (max-width: 720px) {
+  .react-calendar { padding: 8px; }
+  .react-calendar__navigation button { font-size: 14px; padding: 6px 8px; }
+  .legend { gap: 6px; }
 }
 :root {
   --bg: #0B0F14;

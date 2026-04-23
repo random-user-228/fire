@@ -6,9 +6,11 @@ export default function Home() {
   return (
     <main className="p-4 pb-20">
       {/* Екстрений виклик */}
+      <Link href='/calendar'>
       <button className="bg-red-500 w-full p-4 rounded-2xl text-lg font-semibold mb-4">
-        📞 Виклик 101
+      📅 Календар змін
       </button>
+      </Link>
 
       {/* Розділи */}
       <div className="grid grid-cols-2 gap-3">
