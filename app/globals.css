@@ -50,3 +50,15 @@
   background: #ffd24d !important;
   color: black;
 }
+:root {
+  --bg: #0B0F14;
+  --card: #121821;
+  --card-2: #1A222D;
+  --primary: #FF3B30;
+  --text: #E6EDF3;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
