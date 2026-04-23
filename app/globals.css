@@ -6,8 +6,8 @@
   --card-2: #121521;
   --muted: #94a3b8;
   --accent: #2563eb;
-  background: linear-gradient(180deg, var(--card-2), rgba(10,14,18,0.9));
-  color: #E6EDF3;
+  background: linear-gradient(180deg, var(--card-2), rgba(10,14,18,0.9))!important;
+  color: #E6EDF3!important;
   border: 1px solid rgba(255,255,255,0.03);
   border-radius: 12px;
   padding: 10px;
@@ -15,6 +15,7 @@
   box-shadow: 0 10px 30px rgba(2,6,23,0.6);
   position: relative;
   z-index: 10;
+  
 }
 
 /* навігація календаря */
@@ -39,7 +40,7 @@
   z-index: 30;
 }
 .react-calendar__navigation button:hover {
-  background: rgba(37,99,235,0.14);
+  background: rgba(37,99,235,0.14)!important;;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(37,99,235,0.08);
 }
