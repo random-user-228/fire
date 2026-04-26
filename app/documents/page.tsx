@@ -1,7 +1,10 @@
-import Navbar from "../components/NavBar"
+'use client'
 
+import { useRouter } from "next/navigation";
+import Navbar from "../components/NavBar"
 export default function Documents() {
-    const dir_path = "books/";
+    const router = useRouter();
+    const dir_path = "/books/";
     const books = [
         { id: 1, title: "Кодекс Цивільного захисту України", src: "kodekscz.pdf" },
         { id: 2, title: "Наказ МВС України №116 від 10.02.2022 'Про затвердження Порядку організації внутрішньої, гарнізонної та караульної служб в органах та підрозділах цивільного захисту'", src: "116.pdf" },
@@ -16,9 +19,9 @@ export default function Documents() {
       <h1 className="text-lg mb-4">Нормативні документи</h1>
       <div className="flex flex-col gap-3">
       {books.map((book) => (
-                <div key={book.id} className="bg-[#1A222D] p-4 rounded-xl">
-                    <a href={`${dir_path}${book.src}`} target="_blank" rel="noopener noreferrer">
-                    <p>{book.title}</p></a>
+                <div key={book.id} className="bg-[#1A222D] p-4 rounded-xl" onClick={() => router.push(`open?path=${encodeURIComponent(dir_path + book.src)}`)}>
+        
+                    <p>{book.title}</p>
                 </div>
             ))}  
       </div>
