@@ -1,12 +1,11 @@
 
+import React, { Suspense } from "react"
+import OpenClient from "./OpenClient"
 
-'use client'
-import PdfViewer from "../components/pdfviewer"
-import { useSearchParams } from "next/navigation"
 export default function Open() {
-    const searchParams = useSearchParams();
-    const path = searchParams.get("path") || "";
-    return (
-        <><PdfViewer url={decodeURIComponent(path)}/></>
-    )
+  return (
+    <Suspense fallback={<div style={{ padding: 16 }}>Завантаження PDF...</div>}>
+      <OpenClient />
+    </Suspense>
+  )
 }
