@@ -20222,3 +20222,42 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 export { PDFViewerApplication, AppConstants as PDFViewerApplicationConstants, AppOptions as PDFViewerApplicationOptions };
 
 //# sourceMappingURL=viewer.mjs.map
+document.addEventListener("pagesinit", () => {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  const search = params.get("search");
+
+  if (!search) return;
+
+  const run = () => {
+    const app = window.PDFViewerApplication;
+
+    if (!app?.findController) {
+      setTimeout(run, 100);
+      return;
+    }
+
+    setTimeout(() => {
+      app.findController.executeCommand("find", {
+        query: search,
+        highlightAll: true,
+        phraseSearch: true,
+      });
+
+      // автоскрол до результату
+      setTimeout(() => {
+        const el =
+          document.querySelector(".highlightSelected") ||
+          document.querySelector(".highlight");
+
+        if (el) {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }, 500);
+    }, 300);
+  };
+
+  run();
+});

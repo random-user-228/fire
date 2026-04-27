@@ -1,16 +1,12 @@
 "use client"
 import { PDFViewer } from '@embedpdf/react-pdf-viewer';
-import { useSearchParams } from "next/navigation"
-
-export default function PdfSearch() {
-
-    const searchParams = useSearchParams()
-    const path = searchParams.get("path") || ""
+ 
+export default function PdfSearch({ url }: { url: string }) {
   return (
     <div style={{ height: '100vh' }}>
       <PDFViewer 
         config={{
-          src: `/books/${path}.pdf` ,
+          src: url,
           theme: { preference: 'light' }
         }}
       />

@@ -8807,3 +8807,11 @@ dialog :link{
     display:none;
   }
 }
+.textLayer .highlight {
+  background: rgba(255, 235, 59, 0.6) !important;
+}
+
+.highlightSelected {
+  background: #ffd600 !important;
+  border-radius: 2px;
+}
