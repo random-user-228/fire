@@ -1,19 +1,10 @@
-"use client"
-import { PDFViewer } from '@embedpdf/react-pdf-viewer';
-import { useSearchParams } from "next/navigation"
+import { Suspense } from "react";
+import ViewerPage from "./OpenClient";
 
-export default function PdfSearch() {
-
-    const searchParams = useSearchParams()
-    const path = searchParams.get("path") || ""
-  return (
-    <div style={{ height: '100vh' }}>
-      <PDFViewer 
-        config={{
-          src: `/books/${path}.pdf` ,
-          theme: { preference: 'light' }
-        }}
-      />
-    </div>
-  );
+export default function Open() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ViewerPage />
+        </Suspense>
+    )
 }

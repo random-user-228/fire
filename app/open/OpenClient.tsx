@@ -1,10 +1,17 @@
-"use client"
-import PdfSearch from "../components/PdfSearch"
-import { useSearchParams } from "next/navigation"
-
-export default function OpenClient() {
-
-  const searchParams = useSearchParams()
-  const path = searchParams.get("path") || ""
-  return <PdfSearch url={`/books/${path}.pdf`} />
+'use client';
+ 
+import { PDFViewer } from '@embedpdf/react-pdf-viewer';
+ import { useSearchParams} from 'next/navigation';
+export default function ViewerPage() {
+  const searchParams = useSearchParams();
+    const path = searchParams.get('path');
+  return (
+    <div style={{ height: '100vh' }}>
+      <PDFViewer 
+        config={{
+          src: `/books/${path}.pdf`
+        }}
+      />
+    </div>
+  );
 }
