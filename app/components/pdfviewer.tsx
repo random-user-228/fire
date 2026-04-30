@@ -29,7 +29,7 @@ export default function PdfViewer({url}: {url: string}) {
     <div
       id="pdf-viewer"
       ref={containerRef}
-      style={{ height: "500px" }}
+      className="w-full h-screen"
     />
   );
 }
