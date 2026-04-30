@@ -1,13 +1,14 @@
-"use client"
+'use client';
+ 
 import { PDFViewer } from '@embedpdf/react-pdf-viewer';
  
-export default function PdfSearch({ url }: { url: string }) {
+export default function ViewerPage() {
   return (
     <div style={{ height: '100vh' }}>
       <PDFViewer 
         config={{
-          src: url,
-          theme: { preference: 'light' }
+          src: 'https://snippet.embedpdf.com/ebook.pdf'
+        
         }}
       />
     </div>

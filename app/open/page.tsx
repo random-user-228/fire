@@ -1,10 +1,10 @@
-import { Suspense } from "react";
-import ViewerPage from "./OpenClient";
-
-export default function Open() {
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <ViewerPage />
-        </Suspense>
-    )
+'use client'
+import Open from "./Open"
+import { Suspense } from "react"
+export default function OpenPage() {
+  return (
+    <Suspense fallback={<div>Завантаження...</div>}>
+    <Open />
+    </Suspense>
+  )
 }
