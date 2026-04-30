@@ -1,3 +1,4 @@
+
 'use client'
 import Open from "./Open"
 import { Suspense } from "react"
