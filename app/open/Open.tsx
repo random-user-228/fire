@@ -6,7 +6,7 @@ export default function Open() {
   const url = searchParams.get("path") || "";
   const urll = `/books/${url}.pdf`;
   return (
-    <div style={{ height: '100vh' }}>
+    <div className="h-screen w-screen flex items-center justify-center">
       <PdfViewer url={urll} /> 
       </div>
 )}
