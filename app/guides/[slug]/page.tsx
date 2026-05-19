@@ -84,6 +84,7 @@ export default async function GuidePage({ params }: PageProps) {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-red-500 selection:text-white transition-colors duration-200">
       
       {/* Навігаційна панель */}
@@ -127,7 +128,9 @@ export default async function GuidePage({ params }: PageProps) {
 
         </div>
       </main>
-      <Navbar />
+      
     </div>
+    <Navbar />
+    </>
   );
 }

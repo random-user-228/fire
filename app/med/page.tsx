@@ -68,6 +68,7 @@ export default function HomePage() {
   });
 
   return (
+    <>
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans tracking-tight transition-colors duration-200">
       
       {/* Кнопка швидкого виклику 103 */}
@@ -194,7 +195,9 @@ export default function HomePage() {
 
         )}
       </main>
-      <NavBar />
+      
     </div>
+    <NavBar />
+    </>
   );
 }
