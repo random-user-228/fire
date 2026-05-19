@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import guidesDataRaw from '@/data/med.json';
+import Navbar from '@/app/components/NavBar';
 
 interface MedicalGuide {
   slug: string;
@@ -126,6 +127,7 @@ export default async function GuidePage({ params }: PageProps) {
 
         </div>
       </main>
+      <Navbar />
     </div>
   );
 }

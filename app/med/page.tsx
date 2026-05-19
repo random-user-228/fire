@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import guidesData from '@/data/med.json';
-
+import NavBar from '../components/NavBar';
 // Функція динамічного призначення категорій та стилів на основі вмісту
 interface GuideGroup {
   category: string;
@@ -191,8 +191,10 @@ export default function HomePage() {
             </svg>
             <p className="mt-4 text-base font-medium text-slate-500 dark:text-slate-400">Нічого не знайдено. Спробуйте змінити ключові слова.</p>
           </div>
+
         )}
       </main>
+      <NavBar />
     </div>
   );
 }
