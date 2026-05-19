@@ -8,5 +8,6 @@ export default function Open() {
   return (
     <>
       <PdfViewer url={urll} /> 
+
     </>
 )}

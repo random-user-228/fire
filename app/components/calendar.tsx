@@ -23,23 +23,28 @@ export default function FireCalendar() {
   const [value, setValue] = useState(new Date())
 
   return (
-    <>
-    <div className="calendar-wrap mx-auto flex justify-center">
-      <Calendar
-        showNeighboringMonth={false}
-        value={value}
-        onChange={(v) => setValue(v as Date)}
-        tileClassName={({ date }) => {
-          return `shift-${getShift(date)}`
-        }}
-      />
+    <div className="flex items-center justify-center h-screen">
+    <div className="calendar-containerss">
+      
+      <div className="calendar-wrap mx-auto flex justify-center">
+        <Calendar
+          showNeighboringMonth={false}
+          value={value}
+          onChange={(v) => setValue(v as Date)}
+          tileClassName={({ date }) => {
+            return `shift-${getShift(date)}`
+          }}
+        />
+      </div>
+  
+      <div className="legend">
+        <div className="shift-D">1 зміна</div>
+        <div className="shift-A">2 зміна</div>
+        <div className="shift-B">3 зміна</div>
+        <div className="shift-C">4 зміна</div>
+      </div>
+  
     </div>
-    <div className="legend" >
-    <div className="shift-D">1 зміна</div>
-    <div className="shift-A">2 зміна</div>
-    <div className="shift-B">3 зміна</div>
-    <div className="shift-C">4 зміна</div>
-    </div>
-    </>
+  </div>
   )
 }
