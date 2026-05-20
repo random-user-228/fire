@@ -24,32 +24,13 @@ export default function Home() {
           <BookOpen className="text-red-500" />
           <p>Документи</p>
         </div></Link>
-
-        <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center">
-          <Truck className="text-red-500" />
-          <p>Техніка</p>
-        </div>
-
-        <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center">
-          <Flame className="text-red-500" />
-          <p>Тактика</p>
-        </div>
-
-        <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center"  onClick={() => router.push(`open?path=${encodeURIComponent(book_identificator)}`)}>
-          <AlertTriangle className="text-red-500" />
-          <p>Посібник ідентифікатора</p>
-        </div>
-
         <Link href="/med">
         <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center" >
           <BriefcaseMedical className="text-red-500" />
           <p>Домедична</p>
         </div>
         </Link>
-        <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center">
-          <LucidePilcrowSquare className="text-red-500" />
-          <p>Розрахунки</p>
-        </div>
+        
       </div>
 
       <Navbar />
