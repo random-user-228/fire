@@ -25,9 +25,6 @@ export default function Home() {
           <p>Документи</p>
         </div></Link>
         <Link href="/med">
-        <div className="bg-[#121821] p-4 rounded-2xl flex flex-col items-center" >
-          <BriefcaseMedical className="text-red-500" />
-          <p>Домедична</p>
         </div>
         </Link>
         

@@ -12,7 +12,7 @@
     "@ai-sdk/openai": "^3.0.64",
     "@ai-sdk/react": "^3.0.186",
     "@ducanh2912/next-pwa": "^10.2.9",
-    "@embedpdf/react-pdf-viewer": "^2.14.1",
+    "@embedpdf/react-pdf-viewer": "^2.15.0",
     "@fullcalendar/daygrid": "^6.1.20",
     "@fullcalendar/react": "^6.1.20",
     "@tailwindcss/typography": "^0.5.19",
