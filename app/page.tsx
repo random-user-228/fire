@@ -24,9 +24,6 @@ export default function Home() {
           <BookOpen className="text-red-500" />
           <p>Документи</p>
         </div></Link>
-        <Link href="/med">
-        </div>
-        </Link>
         
       </div>
 
